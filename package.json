@@ -1,0 +1,27 @@
+{
+  "name": "cypress-gen-lambdatest",
+  "version": "1.0.0",
+  "description": "cypress test automation using lambdatest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "automation",
+    "cypress",
+    "lambdatest",
+    "broken",
+    "links"
+  ],
+  "author": "enrique decoss",
+  "license": "ISC",
+  "dependencies": {
+    "cypress-plugin-snapshots": "^1.4.4",
+    "cypress-visual-regression": "^1.6.2",
+    "prettier": "^2.3.2"
+  },
+  "devDependencies": {
+    "cypress": "^9.0.0"
+  }
+}
