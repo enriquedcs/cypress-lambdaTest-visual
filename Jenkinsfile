@@ -15,7 +15,7 @@ pipeline {
 
     echo env.LT_USERNAME
     echo env.LT_ACCESS_KEY
-    } 
+     
 
     stages {
         stage('Setup') {
@@ -40,4 +40,5 @@ pipeline {
             }
         }
     }
+}
 }
