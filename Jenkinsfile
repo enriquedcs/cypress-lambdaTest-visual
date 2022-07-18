@@ -1,4 +1,7 @@
 
+agent any
+
+    tools {nodejs "node12"}
 
 node {
     withEnv(["LT_USERNAME=himanshu.sheth@gmail.com",
