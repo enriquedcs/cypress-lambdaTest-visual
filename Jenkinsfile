@@ -1,5 +1,4 @@
 
-#!/usr/bin/env groovy
 
 node {
     withEnv(["LT_USERNAME=himanshu.sheth@gmail.com",
