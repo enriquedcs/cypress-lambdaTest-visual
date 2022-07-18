@@ -18,8 +18,8 @@ node {
       //sh "wget http://downloads.lambdatest.com/tunnel/linux/64bit/LT_Linux.zip"
 
       //Required if unzip is not installed
-      sh 'sudo apt-get install --no-act unzip'
-      sh 'unzip -o LT_Linux.zip'
+      //sh 'sudo apt-get install --no-act unzip'
+      //sh 'unzip -o LT_Linux.zip'
 
       //Starting Tunnel Process 
       sh "./LT -user ${env.LT_USERNAME} -key ${env.LT_ACCESS_KEY} &"
