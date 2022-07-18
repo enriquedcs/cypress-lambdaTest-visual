@@ -1,7 +1,10 @@
 
-agent any
-
-    tools {nodejs "node12"}
+agent {
+    // this image provides everything needed to run Cypress
+    docker {
+      image 'cypress/base:10'
+    }
+  }
 
 node {
     withEnv(["LT_USERNAME=himanshu.sheth@gmail.com",
