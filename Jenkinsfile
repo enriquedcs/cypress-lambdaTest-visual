@@ -6,16 +6,13 @@ pipeline {
 
     environment {
         CHROME_BIN = '/bin/google-chrome'
+        withEnv(["LT_USERNAME=himanshu.sheth@gmail.com",
+        "LT_ACCESS_KEY=BsrXVWCpUDlP84LuJZnUgui9LBbHLichewCaziHKGYgjydbSnP",
+        "LT_TUNNEL=true"]){
+
+        echo env.LT_USERNAME
+        echo env.LT_ACCESS_KEY
     }
-
-    node {
-    withEnv(["LT_USERNAME=himanshu.sheth@gmail.com",
-    "LT_ACCESS_KEY=BsrXVWCpUDlP84LuJZnUgui9LBbHLichewCaziHKGYgjydbSnP",
-    "LT_TUNNEL=true"]){
-
-    echo env.LT_USERNAME
-    echo env.LT_ACCESS_KEY
-     
 
     stages {
         stage('Setup') {
@@ -40,6 +37,4 @@ pipeline {
             }
         }
     }
-}
-}
 }
