@@ -53,5 +53,4 @@ pipeline {
       echo "Success" 
       }
   }
-  }
 }
