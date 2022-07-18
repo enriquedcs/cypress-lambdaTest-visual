@@ -13,6 +13,9 @@
     "failOnStatusCode": false,
     "screenshotsFolder": "./cypress/snapshots/actual",
     "trashAssetsBeforeRuns": true,
+    "e2e": {
+      "experimentalSessionAndOrigin": true
+    },
     "ignoreTestFiles": [
         "**/__snapshots__/*",
         "**/__image_snapshots__/*"

@@ -29,8 +29,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 })
 
-const compareSnapshotCommand = require('cypress-visual-regression/dist/command')
+//const compareSnapshotCommand = require('cypress-visual-regression/dist/command')
 
-compareSnapshotCommand()
+//compareSnapshotCommand()
 
-import "cypress-plugin-snapshots/commands";
+//import "cypress-plugin-snapshots/commands"
+
+import "@cypress-audit/pa11y/commands"

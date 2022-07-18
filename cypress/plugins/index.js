@@ -26,15 +26,29 @@ module.exports = (on, config) => {
   })
 }
 
-const getCompareSnapshotsPlugin = require('cypress-visual-regression/dist/plugin')
+//const getCompareSnapshotsPlugin = require('cypress-visual-regression/dist/plugin')
+
+//module.exports = (on, config) => {
+//  getCompareSnapshotsPlugin(on, config)
+//}
+
+//const { initPlugin } = require("cypress-plugin-snapshots/plugin")
+
+//module.exports = (on, config) => {
+//  initPlugin(on, config)
+//  return config
+//}
+
+const { pa11y, prepareAudit } = require("@cypress-audit/pa11y")
 
 module.exports = (on, config) => {
-  getCompareSnapshotsPlugin(on, config)
+  on("before:browser:launch", (browser = {}, launchOptions) => {
+    prepareAudit(launchOptions)
+  })
+
+  on("task", {
+    pa11y: pa11y((pa11yReport) => {
+      console.log(pa11yReport); // raw pa11y reports
+    })
+  })
 }
-
-const { initPlugin } = require("cypress-plugin-snapshots/plugin");
-
-module.exports = (on, config) => {
-  initPlugin(on, config);
-  return config;
-};
