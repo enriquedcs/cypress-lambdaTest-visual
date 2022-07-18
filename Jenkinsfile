@@ -12,7 +12,7 @@ node {
    
       // Get some code from a GitHub repository
     try{
-      git 'https://github.com/LambdaTest/nightwatch-selenium-sample.git'
+      git 'https://github.com/enriquedcs/cypress-lambdaTest-visual.git'
 
       //Download Tunnel Binary
       sh "wget http://downloads.lambdatest.com/tunnel/linux/64bit/LT_Linux.zip"
