@@ -15,14 +15,14 @@ node {
       git 'https://github.com/enriquedcs/cypress-lambdaTest-visual'
 
       //Download Tunnel Binary
-      //sh "wget https://downloads.lambdatest.com/tunnel/v3/linux/64bit/LT_Linux.zip"
+      //sh "wget https://downloads.lambdatest.com/tunnel/v3/mac/64bit/LT_Mac.zip"
 
       //Required if unzip is not installed
       //sh 'sudo apt-get install --no-act unzip'
       //sh 'unzip -o LT_Linux.zip'
 
       //Starting Tunnel Process 
-      sh "./LT -user ${env.LT_USERNAME} -key ${env.LT_ACCESS_KEY} &"
+      sh "~/downloads/./LT -user ${env.LT_USERNAME} -key ${env.LT_ACCESS_KEY} &"
       sh  "rm -rf LT_Linux.zip"
     }
     catch (err){
