@@ -22,7 +22,7 @@ node {
       //sh 'unzip -o LT_Linux.zip'
 
       //Starting Tunnel Process 
-      sh "~/downloads/./LT -user ${env.LT_USERNAME} -key ${env.LT_ACCESS_KEY}"
+      sh "~/downloads/./LT --user ${env.LT_USERNAME} --key ${env.LT_ACCESS_KEY}"
     }
     catch (err){
       echo err
