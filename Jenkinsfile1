@@ -7,8 +7,8 @@ agent {
   }
 
 node {
-    withEnv(["LT_USERNAME=himanshu.sheth@gmail.com",
-    "LT_ACCESS_KEY=BsrXVWCpUDlP84LuJZnUgui9LBbHLichewCaziHKGYgjydbSnP",
+    withEnv(["LT_USERNAME=user",
+    "LT_ACCESS_KEY=key",
     "LT_TUNNEL=true"]){
 
     echo env.LT_USERNAME
