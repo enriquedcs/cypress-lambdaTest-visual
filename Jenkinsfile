@@ -22,8 +22,7 @@ node {
       //sh 'unzip -o LT_Linux.zip'
 
       //Starting Tunnel Process 
-      sh "~/downloads/./LT -user ${env.LT_USERNAME} -key ${env.LT_ACCESS_KEY} &"
-      sh  "rm -rf LT_Linux.zip"
+      sh "~/downloads/./LT -user ${env.LT_USERNAME} -key ${env.LT_ACCESS_KEY}"
     }
     catch (err){
       echo err
@@ -32,7 +31,7 @@ node {
    }
    stage('build') {
       // Installing Dependencies
-      sh 'npm i'
+      sh 'npm install'
     }
 
    stage('test') {
