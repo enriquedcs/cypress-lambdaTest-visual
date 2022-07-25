@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
 node {
-    withEnv(["LT_USERNAME=enrique.decoss@gmail.com",
-    "LT_ACCESS_KEY=rJdr2OmT4MRQl6Gxx3G8fuhtQljuLx11NheW2WSwCWdfpSTiuX",
+    withEnv(["LT_USERNAME=",
+    "LT_ACCESS_KEY=",
     "LT_TUNNEL=true"]){
 
     echo env.LT_USERNAME
