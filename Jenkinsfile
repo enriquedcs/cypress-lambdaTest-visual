@@ -2,8 +2,7 @@
 
 node {
     withEnv(["LT_USERNAME=",
-    "LT_ACCESS_KEY=",
-    "LT_TUNNEL=true"]){
+    "LT_ACCESS_KEY="{
 
     echo env.LT_USERNAME
     echo env.LT_ACCESS_KEY 
