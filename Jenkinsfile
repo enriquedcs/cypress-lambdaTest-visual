@@ -1,49 +1,30 @@
-#!/usr/bin/env groovy
 
-node {
-    withEnv(["LT_USERNAME=",
-    "LT_ACCESS_KEY="]){
+pipeline {
+    agent any
 
-    echo env.LT_USERNAME
-    echo env.LT_ACCESS_KEY 
+    tools {nodejs "Node12"}
 
-   stage('setup') { 
-
-      // Get some code from a GitHub repository
-    try{
-      git 'https://github.com/enriquedcs/cypress-lambdaTest-visual'
-
-      //Download Tunnel Binary
-      //sh "wget https://downloads.lambdatest.com/tunnel/v3/mac/64bit/LT_Mac.zip"
-
-      //Required if unzip is not installed
-      //sh 'sudo apt-get install --no-act unzip'
-      //sh 'unzip -o LT_Linux.zip'
-
-      //Starting Tunnel Process 
-      //sh "~/downloads/./LT --user ${env.LT_USERNAME} --key ${env.LT_ACCESS_KEY}"
+    environment {
+        CHROME_BIN = '/bin/google-chrome'
+        
     }
-    catch (err){
-      echo err
-   }
 
-   }
-   //stage('build') {
-      // Installing Dependencies
-    //  sh 'npm install'
-    //}
-
-   stage('test') {
-          try{
-          sh 'lambdatest-cypress run'
-          }
-          catch (err){
-          echo err
-          }  
-   }
-   stage('end') {  
-     echo "Success" 
-     }
- }
+    stages {
+        stage('Dependencies') {
+            steps {
+                sh 'npm i'
+            }
+        }
+        stage('e2e Tests') {
+            steps {
+                sh 'npm run cypress:lambda'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
 }
 
