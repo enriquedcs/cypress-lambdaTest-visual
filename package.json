@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:ci": "cypress run",
-    "lambda": "lambdatest-cypress run"
+    "cypress:lambda": "lambdatest-cypress run"
   },
   "keywords": [
     "test",
