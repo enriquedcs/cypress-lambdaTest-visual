@@ -22,21 +22,21 @@ node {
       //sh 'unzip -o LT_Linux.zip'
 
       //Starting Tunnel Process 
-      sh "~/downloads/./LT --user ${env.LT_USERNAME} --key ${env.LT_ACCESS_KEY}"
+      //sh "~/downloads/./LT --user ${env.LT_USERNAME} --key ${env.LT_ACCESS_KEY}"
     }
     catch (err){
       echo err
    }
 
    }
-   stage('build') {
+   //stage('build') {
       // Installing Dependencies
-      sh 'npm install'
-    }
+    //  sh 'npm install'
+    //}
 
    stage('test') {
           try{
-          sh 'npm run cypress:ci'
+          sh 'lambdatest-cypress run'
           }
           catch (err){
           echo err
